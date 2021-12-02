@@ -1,27 +1,22 @@
-console.log("CONNECTED");
-
-const toggleBtn = document.querySelector(".mobile-nav-toggle");
 const navigation = document.querySelector(".primary-navigation");
+const navToggle = document.querySelector(".mobile-nav-toggle");
 
 const navigationToggle = {
-  toggleBtn,
+  navToggle,
   navigation,
   open: function () {
-    this.navigation.classList.remove("hide-navigation");
-    this.setBackgroundImage("close");
+    this.navigation.setAttribute("data-visible", "true");
+    navToggle.setAttribute("aria-expanded", "true");
   },
   close: function () {
-    this.navigation.classList.add("hide-navigation");
-    this.setBackgroundImage("hamburger");
-  },
-  setBackgroundImage: function (word) {
-    this.toggleBtn.style.backgroundImage = `url(./assets/shared/icon-${word}.svg)`;
+    this.navigation.setAttribute("data-visible", "false");
+    navToggle.setAttribute("aria-expanded", "false");
   },
   updateNavigation: function () {
-    this.navigation.classList.contains("hide-navigation")
+    navigation.dataset.visible === "false"
       ? navigationToggle.open()
       : navigationToggle.close();
   },
 };
 
-toggleBtn.addEventListener("click", () => navigationToggle.updateNavigation());
+navToggle.addEventListener("click", () => navigationToggle.updateNavigation());
