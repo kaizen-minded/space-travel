@@ -10,7 +10,6 @@ tabs.forEach((tab) => {
     displayInfo([...tabs].indexOf(e.target));
   });
 });
-
 function displayInfo(index) {
   hideContent();
   showActiveContent(index);
@@ -21,7 +20,7 @@ function changeTabFocus(e) {
   const keydownRight = 39;
   let currentIndex = [...tabs].indexOf(e.target);
 
-  if (e.keyCode === keydownLeft || e.keyCode === keydownLeft) {
+  if (e.keyCode === keydownLeft || e.keyCode === keydownRight) {
     e.target.tabIndex = "-1";
 
     e.keyCode === keydownRight ? currentIndex++ : currentIndex--;
