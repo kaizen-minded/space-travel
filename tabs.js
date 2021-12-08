@@ -10,6 +10,7 @@ tabs.forEach((tab) => {
     displayInfo([...tabs].indexOf(e.target));
   });
 });
+
 function displayInfo(index) {
   hideContent();
   showActiveContent(index);
@@ -22,22 +23,16 @@ function changeTabFocus(e) {
 
   if (e.keyCode === keydownLeft || e.keyCode === keydownLeft) {
     e.target.tabIndex = "-1";
-  }
-  if (e.keyCode === keydownRight) {
-    currentIndex++;
-    if (currentIndex >= tabs.length) {
-      currentIndex = 0;
-    }
-  }
-  if (e.keyCode === keydownLeft) {
-    currentIndex--;
-    if (currentIndex < 0) {
-      currentIndex = tabs.length - 1;
-    }
-  }
 
-  tabs[currentIndex].tabIndex = "0";
-  tabs[currentIndex].focus();
+    e.keyCode === keydownRight ? currentIndex++ : currentIndex--;
+
+    if (currentIndex >= tabs.length || currentIndex < 0) {
+      currentIndex = currentIndex < 0 ? tabs.length - 1 : 0;
+    }
+
+    tabs[currentIndex].tabIndex = "0";
+    tabs[currentIndex].focus();
+  }
 }
 
 function hideContent() {
