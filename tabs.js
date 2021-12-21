@@ -10,6 +10,7 @@ tabs.forEach((tab) => {
     displayInfo([...tabs].indexOf(e.target));
   });
 });
+
 function displayInfo(index) {
   hideContent();
   showActiveContent(index);
