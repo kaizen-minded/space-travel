@@ -16,6 +16,7 @@
     <!-- Custom Styling -->
     <link rel="stylesheet" href="./css/styles.css" />
     <title>Space Tourism Website</title>
+    <script src="tabs.js" defer></script>
   </head>
   <body class="destination">
     <a href="#destination" class="skip-to-content">Skip to Content</a>
@@ -36,24 +37,24 @@
           class="primary-navigation hide-navigation underline-indicators flex"
           data-visible="false"
         >
-          <li class="active">
-            <a
-              class="ff-sans-cond uppercase text-white letter-spacing-2"
-              href="#"
-              ><span aria-hidden="true">00</span>Home
-            </a>
-          </li>
           <li>
             <a
               class="ff-sans-cond uppercase text-white letter-spacing-2"
-              href="#"
+              href="index.html"
+              ><span aria-hidden="true">00</span>Home
+            </a>
+          </li>
+          <li class="active">
+            <a
+              class="ff-sans-cond uppercase text-white letter-spacing-2"
+              href="destination.html"
               ><span aria-hidden="true">01</span>Destination
             </a>
           </li>
           <li>
             <a
               class="ff-sans-cond uppercase text-white letter-spacing-2"
-              href="#"
+              href="crew.html"
               ><span aria-hidden="true">02</span>Crew
             </a>
           </li>
@@ -92,30 +93,38 @@
         <img src="assets/destination/image-titan.png" alt="The moon Titan">
       </picture>
       
-      <div class="tab-list underline-indicators flex">
+      <div class="tab-list underline-indicators flex" role="tablist">
         <button
           aria-selected="true"
           class="active uppercase text-accent letter-spacing-2 ff-sans-cond"
+          role="tab"
+          tabindex="0"
         >
-          Moon
+          moon
         </button>
         <button
           aria-selected="false"
           class="uppercase text-accent letter-spacing-2 ff-sans-cond"
+          role="tab"
+          tabindex="-1"
         >
-          Mars
+          mars
         </button>
         <button
           aria-selected="false"
           class="uppercase text-accent letter-spacing-2 ff-sans-cond"
+          role="tab"
+          tabindex="-1"
         >
-          Europa
+          europa
         </button>
         <button
           aria-selected="false"
           class="uppercase text-accent letter-spacing-2 ff-sans-cond"
+          role="tab"
+          tabindex="-1"
         >
-          Titan
+          titan
         </button>
       </div>
      
@@ -140,7 +149,7 @@
     </article>
     
     <!-- Mars -->
-    <article hidden class="destination-info flow hide">
+    <article class="destination-info flow hide">
       <h2 class="fs-800 uppercase ff-serif">Mars</h2>
 
       <p>Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, 
